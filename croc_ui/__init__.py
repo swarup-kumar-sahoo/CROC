@@ -23,7 +23,7 @@ from .components.ui import (
 from .styles.style import Style
 from .styles.theme import Theme
 
-__version__ = "1.0.0"
+__version__ = "1.0.2"
 __author__ = "Swarup Kumar Sahoo"
 __repo__ = "https://github.com/swarup-kumar-sahoo/croc"
 

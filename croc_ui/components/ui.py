@@ -660,6 +660,11 @@ class Avatar(Element):
             f"overflow: hidden; display: inline-flex; align-items: center; "
             f"justify-content: center; flex-shrink: 0; font-weight: 700; "
         )
+        # Merge any extra style passed by the user
+        extra_style = kwargs.pop("style", "")
+        if extra_style:
+            base_style = base_style + " " + str(extra_style)
+
         if src:
             img = Element.__new__(Element)
             img.tag = "img"
@@ -673,5 +678,5 @@ class Avatar(Element):
         else:
             text = initials[:2].upper() if initials else "?"
             font_size = f"calc({size} * 0.4)"
-            full_style = base_style + f"background: {color}20; color: {color}; font-size: {font_size};"
+            full_style = base_style + f" background: {color}20; color: {color}; font-size: {font_size};"
             super().__init__(text, style=full_style, **kwargs)
